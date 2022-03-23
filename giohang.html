@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="keywords" content="gấu bông, gấu bông xinh, gấu, thú nhồi bông, quà tặng, quà tặng bạn gái, quà tặng 20 tháng 10, quà tặng 8 tháng 3, quà 14 tháng 2, quà valentine"  />
+        <meta  name="description" content="Cửa hàng kinh doanh quà tặng Gấu bông và Thú nhồi bông, uy tín chất luọng luôn đặt lên hàng đầu" />
+        <meta name="viewport" content="width = device-width, inital-scale=1.0"/>
+        
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+        <meta name="revisit-after" content="1 days" />
+        <meta name="robots" content="index,follow" />
+        <meta property="og:title" content="Gấu Bông Xinh - cửa hàng kinh doanh quà tặng Gấu bông và Thú nhồi bông">
+        <meta property="og:description" content="cửa hàng kinh doanh quà tặng Gấu bông và Thú nhồi bông, uy tín chất luọng luôn đặt lên hàng đầu" />
+        <meta property="og:locale" content="vi" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="#" />
+        <meta property="og:image" content="#" />
+        <meta property="og:image:alt" content="Gấu Bông Xinh - cửa hàng kinh doanh quà tặng Gấu bông và Thú nhồi bông" />
+        <meta property="og:site_name" content="GauBongXinh" />
+
+        <link rel="shortcut icon" type="icon/x-icon" href="images-gbx/gbxicon.png" />
+        <!-- reset lai trang sau 1800s khong co tac dong -->
+        <meta http-equiv="REFRESS" content="1800" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edeg">
+        <!-- Linh css -->
+        <link href="css/stylegbx.css" rel="stylesheet" />
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+
+        <!-- Link javascript -->
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/script-gbx.js" ></script>
+
+        
+        <!-- cdn fontawesome -->
+        <script src="https://kit.fontawesome.com/a55e5fd444.js" crossorigin="anonymous"></script>
+        
+        <title>Gấu Bông Xinh Shop</title>
+
+    </head>
+    <body onload="init()">
+        <header>
+            <div class="header">
+                <div class="header__img">
+                    <img src="images-gbx/gbxheader01.png"  alt="header-img"  />
+                    <div class="header__btn">
+                        <button id="giohang" ><i class='bx bx-cart-alt'></i> <a href="#" target="_blank">Giỏ hàng<div class="number__amount">0</div></a></button>
+                        <button>Đăng ký/Đăng nhập</button>
+                    
+                    </div>
+                    <div class="header__seach">
+                        <input type="text" id="input__seach" placeholder="Tìm kiếm ..." />
+                        <!-- <input type="button" id="input__button" value="Tìm kiếm" /> -->
+                        <button id="seach__button" ><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- menu mobile -->
+            <div class="menus__mobile mobile__hidden">
+                <div class="icon__logo">
+                    <img src="images-gbx/gbxicon.png" alt="icon"/>
+                    
+                </div>
+                <div class="seach__mobile">
+                    <input type="text" class="seach__input__mobile" id="input__mobile" placeholder="tim kiem...">
+                    <button class="seach__button__mobile" id="btn__mobile"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="order__tracking__mobile">
+                    <button id="giohang__mobile" ><i class='bx bx-cart-alt'></i><div class="number__amount__mobile">0</div></button>
+                </div>
+                <div class="menu__mobile_btn">
+                    <button><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+
+            <!-- menu -->
+            <nav class="menus hidden__menu">
+                <div class="menu__list">
+                    <div class="img__header__mobile mobile__hidden">
+                        <img src="images-gbx/gbxheader01.png" alt="img header"/>
+                        <button class="prev__menu__mobile" id="prev__menu"><i class="fa-solid fa-arrow-left-long"></i></button>
+                    </div>
+                    
+                    <ul>
+                        <li><a href="index.html" >Trang Chủ</a></li>
+                        <li><a href="#" target="_blank">Gấu Bông</a></li>
+                        <li><a href="#" target="_blank">Hoa Hồng Sáp</a></li>
+                        <li><a href="#" target="_blank">Socola</a></li>
+                        <li><a href="#" target="_blank">beautiful nails</a></li>
+                        <li><a id="menu__contact" href="#" >Liên Hệ</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- model introduce yourself / gioi thieu ban than -->
+
+        <div class="model hidden">
+            <div class="model__inner">
+                <div class="model__card">
+                    <div class="model__card__img" >
+                        <img src="images-gbx/gaubongnen.png" alt="img user" />
+                        
+                    </div>
+                    <div class="model__card__name">
+                        <h2>Booqee</h2>
+                    </div>
+                    <div class="model__card__job">
+                        <p>Developer javascript</p>
+                    </div>
+                    <div class="model__card__social">
+                        <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <div class="model__card__close">
+                        <button>Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main__shopping__card">
+            <div class="order__detail">
+                <div class="key__properties">
+                    <h4 class="table__name">Tên sản phẩm</h4>
+                    <h4 class="table__price">giá</h4>
+                    <h4 class="table__amount">Số lượng</h4>
+                    <h4 class="table__money">Thành tiền</h4>
+                    <h4 class="table__detail">Chi tiết</h4>
+                </div>
+                <!-- <div class="order__product ">
+                    <div class="dis__flex">
+                        <div class="table__name__img">
+                            <img src="${data[j].image}" alt="">
+                        </div>
+                        <div class="table__name__detail">
+                            <div>
+                                <h4  id="product__name__order"">${data[j].productName}</h4>
+                            </div>
+                            <div class="products__height__order">
+                                <h4>Kích thước:</h4>
+                                <h4 id="product__height__order">${data[j].height}</h4>
+                                <h4>cm</h4>
+                            </div>
+                            <div class="delete__order">
+                                <div id="product__code__order" class="hidden">${data[j].productCode}</div>
+                                <button id="product__delete__order"><i class="fa-solid fa-trash"></i> Xóa</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile__order">
+                        <div class="products__price__order">
+                            <h4 id="product__price__order">${data[j].price}</h4>
+                            <h4>đ</h4>
+                        </div>
+                        <div class="products__amount__order">
+                            <span class="sum__order">+</span>
+                            <span class="amount__order">${proCard[i].soluong}</span>
+                            <span class="sub__order">-</span>
+                        </div>
+                        <div class="products__money__order">
+                            <h4 id="product__money__order">${gia}</h4>
+                            <h4>đ</h4>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <!-- ************** chi tiet don hang .........-->
+            <div class="order__summarys">
+                <h4>Chi tiết đơn hàng</h4>
+                <div class="order__summary">
+                    <div class="amount__product__summary">
+                        <span>Số lượng:</span>
+                        <h4 id="amount__product__summary">0</h4>
+                    </div>
+                    <div class="price__product__summary">
+                        <span>Giá niêm yết:</span>
+                        <div>
+                            <h4 id="price__summary001">0</h4>
+                            <h4> đ</h4>
+                        </div>
+                        
+                    </div>
+                    <div class="discount__product__summary">
+                        <span>Giảm giá :</span>
+                        <div>
+                            <h4 id="discount__summary">0</h4>
+                            <h4> đ</h4>
+                        </div>
+                    </div>
+                    <div class="total__price__summary">
+                        <span>Tổng cộng :</span>
+                        <div>
+                            <h4 id="total__summary">0</h4>
+                            <h4> đ</h4>
+                        </div>
+                    </div>
+
+                    <div class="button__summary">
+                        <button id="payment__summary">Thanh Toán</button>
+                        <button id="buy__more__product">Mua thêm sản phẩm</button>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+
+    </body>
+</html>
