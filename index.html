@@ -46,6 +46,7 @@
 
     </head>
     <body onload="init()"> 
+        
         <header>
             <div class="header">
                 <div class="header__img">
@@ -104,7 +105,12 @@
                 </div>
             </nav>
         </header>
-
+        
+        <div class="mobile__shopping">
+            
+            <button id="giohang__mobile" class="mobile__shopping__cart"><i class='bx bx-cart-alt'></i><div class="number__amount">0</div></button>
+            
+        </div>
         <!-- model introduce yourself / gioi thieu ban than -->
 
         <div class="model hidden">
@@ -159,6 +165,7 @@
                     <div class="model__internation">
                         <div class="model__product__names">
                             <h3 id="model__product_name" >Product Name</h3>
+                            <span id="model__product_code" class="hidden"></span>
                             <div class="model__product__reviews">
                                 <div class="model__review__scores">
                                     <h4 id="model__review__score" >4.5</h4>
@@ -216,9 +223,15 @@
                             </div>
                             <div class="model__product__number">
                                 <span>Số lượng:</span>
-                                <span id="model__product__number__addition" >+</span>
+
+                                <div class="products__amount__order">
+                                    <span id="model__product__number__addition"  class="sum__order">+</span>
+                                    <span id="model__product__number" class="amount__order">1</span>
+                                    <span id="model__product__number__subtraction" class="sub__order">-</span>
+                                </div>
+                                <!-- <span id="model__product__number__addition" >+</span>
                                 <input type="number" id="model__product__number" value="1" />
-                                <span id="model__product__number__subtraction" >-</span>
+                                <span id="model__product__number__subtraction" >-</span> -->
                             </div>
                             <div class="model__product__button">
                                 <button id="model__add__card"><i class="fa-solid fa-cart-shopping"></i> Mua ngay</button>
@@ -667,7 +680,7 @@
                 <h2><a href="index2.html"><i class="fa-solid fa-arrows-rotate"></i> Xem thêm</a></h2>
             </div>
             <div class="cards__item">
-                <div class="card"> 
+                <!-- <div class="card"> 
                     <div class="card__heart">
                         <i class='bx bx-heart'></i>
                     </div>
@@ -702,7 +715,7 @@
                         <button id="cart__action__detail" >Chi Tiết</button>
                         <button id="cart__action__add__card">Mua Ngay</button>
                     </div>
-                </div>
+                </div> -->
 
 
                 <!-- <div class="card"> 
@@ -910,6 +923,7 @@
                 
             </div>
         </section>
+        
 
 
 

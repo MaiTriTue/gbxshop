@@ -691,6 +691,8 @@ $(document).ready(function(){
         
     }
 
+
+
     // click gio hang
     $("#giohang").click(function(){
         window.location.href="giohang.html";
@@ -698,6 +700,23 @@ $(document).ready(function(){
     $("#giohang__mobile").click(function(){
         window.location.href="giohang.html";
     })
+
+     // giỏ hàng di động 
+     $(".mobile__shopping").hide();
+     $(window).scroll(function(){
+         if($(this).scrollTop() >= 300){
+             $(".mobile__shopping").show("slow");
+             
+         }
+         else{
+             $(".mobile__shopping").hide("slow");
+         }
+     })
+ 
+     $(".mobile__shopping").click(function(){
+         window.location.href= "giohang.html";
+     })
+ 
 
     // model introduce yourself / gioi thieu ban than
     $("a#menu__contact").click(function(){
@@ -712,10 +731,33 @@ $(document).ready(function(){
 
     $(".model__card__close").click(function() {
         $(".model").toggleClass('hidden')
-       
     })
 
     // Model Product Detail
+    // $(this).parents(".model__internation").find("#model__product_code").text()
+    // click cong tru so luong
+
+    $("#model__product__number__addition").click(function(){
+        let count = Number($(this).siblings("#model__product__number").text());
+        count += 1;
+        $(this).siblings("#model__product__number").text(count);
+        
+    })
+    $("#model__product__number__subtraction").click(function(){
+        let count = Number($(this).siblings("#model__product__number").text());
+        if(count > 1){
+            count -= 1;
+            $(this).siblings("#model__product__number").text(count);
+        }
+    })
+
+    //  click button mua ngay product detail
+
+    $("#model__add__card").click(function(){
+        let count = Number($(this).parents(".model__internation").find("#model__product__number").text());
+        addDataCard($(this).parents(".model__internation").find("#model__product_code").text(), count );
+        window.location.href = "giohang.html";
+    })
 
     // open model product detail
     $(".cards__item").on("click", ".card > .card__action > button#cart__action__detail", function() {
@@ -1052,8 +1094,10 @@ function addProductsCard(productCode){
 
         if(amountproduct() != 0){
             sessionStorage.setItem('amountProCard', amountproduct() );
-            $(".number__amount").text(sessionStorage.getItem('amountProCard'));
-            $(".number__amount__mobile").text(sessionStorage.getItem('amountProCard'));
+            $(".number__amount").text(amountproduct());
+            $(".number__amount__mobile").text(amountproduct());
+            // $(".number__amount").text(sessionStorage.getItem('amountProCard'));
+            // $(".number__amount__mobile").text(sessionStorage.getItem('amountProCard'));
         }
 
     })
@@ -1074,8 +1118,10 @@ function removeProductsCard(productCode){
 
         if(amountproduct() != 0){
             sessionStorage.setItem('amountProCard', amountproduct() );
-            $(".number__amount").text(sessionStorage.getItem('amountProCard'));
-            $(".number__amount__mobile").text(sessionStorage.getItem('amountProCard'));
+            // $(".number__amount").text(sessionStorage.getItem('amountProCard'));
+            // $(".number__amount__mobile").text(sessionStorage.getItem('amountProCard'));
+            $(".number__amount").text(amountproduct());
+            $(".number__amount__mobile").text(amountproduct());
         }
 
     })
@@ -1084,19 +1130,23 @@ function removeProductsCard(productCode){
 
 
 function addDataCard(productCode, amount){
-    
+    if(readDataCard()){
+        productCard = readDataCard();
+    }
     $(document).ready(function(){
         productCard.push({
             "masp":productCode,
             "soluong":amount
         })
         localStorage.setItem('dataCard', JSON.stringify(productCard));
-
+        productCard = [];
         if(amountproduct() != 0){
 
             sessionStorage.setItem('amountProCard', amountproduct() );
-            $(".number__amount").text(sessionStorage.getItem('amountProCard'));     
-            $(".number__amount__mobile").text(sessionStorage.getItem('amountProCard'));            
+            // $(".number__amount").text(sessionStorage.getItem('amountProCard'));     
+            // $(".number__amount__mobile").text(sessionStorage.getItem('amountProCard'));            
+            $(".number__amount").text(amountproduct());
+            $(".number__amount__mobile").text(amountproduct());
         }
         
 
@@ -1123,8 +1173,10 @@ function removeDataCard(productCode){
     
     if(proCard.length != 0){
         sessionStorage.setItem('amountProCard', proCard.length );
-        $(".number__amount").text(sessionStorage.getItem('amountProCard'));        
-        $(".number__amount__mobile").text(sessionStorage.getItem('amountProCard'));        
+        // $(".number__amount").text(sessionStorage.getItem('amountProCard'));        
+        // $(".number__amount__mobile").text(sessionStorage.getItem('amountProCard'));        
+        $(".number__amount").text(amountproduct());
+            $(".number__amount__mobile").text(amountproduct());
     }
     else{
         sessionStorage.clear();
@@ -1207,9 +1259,9 @@ function loadProductCard(){
                     }
                 }
             }
-            if(sessionStorage.getItem('amountProCard')){
-                $(".number__amount").text(sessionStorage.getItem('amountProCard'));
-                $(".number__amount__mobile").text(sessionStorage.getItem('amountProCard'));
+            if(amountproduct()){
+                $(".number__amount").text(amountproduct());
+                $(".number__amount__mobile").text(amountproduct());
             }    
         
         })
@@ -1230,6 +1282,7 @@ function updateProductDetail(id__product){
             $("#model__img__6").attr("src", data[i].image4)
 
             $("#model__product_name").text( data[i].productName)
+            $("#model__product_code").text( data[i].productCode)
             $("#model__review__score").text( data[i].evaluate)
             $("#model__number_sold").text(data[i].sold)
             $(".model__product__price >h3").text(data[i].price)
@@ -1381,6 +1434,16 @@ function product__highlights(sold__max09, subject){
 // ***************** hết hàm sản phẩm bán chạy và sản phẩm mới ************
 // *****************hàm  khởi tạo cho card product ***********
 
+function ordered__products(){
+    if(readDataCard()){
+        let proCard = readDataCard();
+        for(let i = 0 ; i <proCard.length; i++){
+            
+        }
+    }
+    
+}
+
 function cards__product(){
     $(document).ready(function(){
         for(let i = 0 ; i <data.length; i++){
@@ -1422,6 +1485,7 @@ function cards__product(){
                 </div>
             </div>`
             )
+            console.info($(this).find("#card__id").text())
         }
 
         

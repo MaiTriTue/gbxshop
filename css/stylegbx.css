@@ -21,6 +21,7 @@ body {
     margin: 0 auto;
     background: linear-gradient(to right, #4daf54, #3d8880);
     font-family: 'Poppins', sans-serif;
+   
 }
 
 
@@ -30,6 +31,32 @@ body {
 /* ************************************ kích thước trình duyệt 5000px ********************************** */
 
 @media  screen and (max-width:5000px) {
+
+    
+
+    .mobile__shopping  {
+        width: 4vw;
+        height: 3.5vw;
+        position: fixed;
+        right: 1vw;
+        top:30vh;
+        
+        
+    }
+    .mobile__shopping__cart{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background-color: rgba(197, 230, 13, 0.3);
+    }
+
+    .mobile__shopping__cart > i {
+        font-size: 3vw;
+        color: white;
+    }
 
     /* menu mobile */
     .mobile__hidden{
@@ -702,17 +729,32 @@ body {
         cursor: pointer;
     }
 
-    #model__product__number{
-        font-size: 1vw;
+
+    .model__product__number{
+        display: flex;
+    }
+    .model__product__number > span{
+        margin-top: 2vw;
     }
 
-    #model__product__number__addition, #model__product__number__subtraction{
+
+    #model__product__number{
+        font-size: 1.5vw;
+    }
+
+    .model__products__amount__order{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .model__products__amount__order span{
+        width: 3vw;
+        height: 2.5vw;
+        border: 1px solid gray;
+        text-align: center;
+        font-size: 1.5vw;
         cursor: pointer;
-        font-size: 1vw;
-        padding: 0.2vw 0.3vw;
-        background-color: lightgray;
-        border: 1px solid lightgray ;
-        border-radius: 1px;
     }
 
     .model__product__button button {
@@ -1589,8 +1631,7 @@ body {
         margin-bottom: 1vw;
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        position: relative;
+        
     }
 
     .cards__title > h2:first-child {
@@ -2005,30 +2046,7 @@ body {
 
 
 
-    /* .model__thumb {
-        width: 15%;
-        height: 8vh;
-        margin: 6vh 0;
-        display: flex;
-        justify-content: space-between;
-        
-    }
-
-
-    .model__thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border: 1px solid green;
-        object-position: center;
-        cursor: pointer;
-    }
-
-    .model__thumb img:not(:last-child) {
-        margin-right: 1.4vw;
-    } */
-
-
+    
 
     /* CSS model product detail internation */
 
@@ -2155,9 +2173,30 @@ body {
         cursor: pointer;
     }
 
-    #model__product__number{
-        font-size: 1.5vw;
+
+    .model__product__number{
+        display: flex;
     }
+
+    #model__product__number{
+        font-size: 3vw;
+    }
+
+    .model__products__amount__order{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .model__products__amount__order span{
+        width: 3vw;
+        height: 2.5vw;
+        border: 1px solid gray;
+        text-align: center;
+        font-size: 3vw;
+        cursor: pointer;
+    }
+
 
     #model__product__number__addition, #model__product__number__subtraction{
         cursor: pointer;
