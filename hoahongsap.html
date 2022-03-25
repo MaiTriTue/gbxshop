@@ -1,921 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
-         <!-- ngôn ngữ tiếng việt -->
-        <meta charset="utf-8" />
-        <!-- key tim kiem -->
-        <meta name="keywords" content="gấu bông, gấu bông xinh, gấu, thú nhồi bông, quà tặng, quà tặng bạn gái, quà tặng 20 tháng 10, quà tặng 8 tháng 3, quà 14 tháng 2, quà valentine"  />
-        <meta  name="description" content="Cửa hàng kinh doanh quà tặng Gấu bông và Thú nhồi bông, uy tín chất luọng luôn đặt lên hàng đầu" />
-        <meta name="viewport" content="width = device-width, inital-scale=1.0"/>
-        
-        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
-        <meta name="revisit-after" content="1 days" />
-        <meta name="robots" content="index,follow" />
-        <meta property="og:title" content="Gấu Bông Xinh - cửa hàng kinh doanh quà tặng Gấu bông và Thú nhồi bông">
-        <meta property="og:description" content="cửa hàng kinh doanh quà tặng Gấu bông và Thú nhồi bông, uy tín chất luọng luôn đặt lên hàng đầu" />
-        <meta property="og:locale" content="vi" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="#" />
-        <meta property="og:image" content="#" />
-        <meta property="og:image:alt" content="Gấu Bông Xinh - cửa hàng kinh doanh quà tặng Gấu bông và Thú nhồi bông" />
-        <meta property="og:site_name" content="GauBongXinh" />
-
-        <link rel="shortcut icon" type="icon/x-icon" href="images-gbx/gbxicon.png" />
-        <!-- reset lai trang sau 1800s khong co tac dong -->
-        <meta http-equiv="REFRESS" content="1800" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edeg">
-        <!-- Linh css -->
-        <link href="css/stylegbx.css" rel="stylesheet" />
-        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
-
-        <!-- Link javascript -->
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/script-gbx.js" ></script>
-
-        
-        <!-- cdn fontawesome -->
-        <script src="https://kit.fontawesome.com/a55e5fd444.js" crossorigin="anonymous"></script>
-
-        <title>Gấu Bông Xinh Shop</title>
-
-        
-        
-
-
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Shopping-cart</title>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/reponsive.css" />
     </head>
-    <body onload="init()"> 
+
+    <body>
+        <!-- header -->
         <header>
-            <div class="header">
-                <div class="header__img">
-                    <img src="images-gbx/gbxheader01.png"  alt="header-img"  />
-                    <div class="header__btn">
-                        
-                        <button id="giohang" ><i class='bx bx-cart-alt'></i> <a href="#" target="_blank">Giỏ hàng<div class="number__amount">0</div></a></button>
-
-                        <button id="dangnhap" ><a href="#">Đăng ký/Đăng nhập</a></button>
-                    
-                    </div>
-                    <div class="header__seach">
-                        <input type="text" id="input__seach" placeholder="Tìm kiếm ..." />
-                        <!-- <input type="button" id="input__button" value="Tìm kiếm" /> -->
-                        <button id="seach__button" ><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
+            <nav>
+                <div class="img-nav">
+                    <img src="img/logo.png" alt="" />
                 </div>
-                
-            </div>
-
-            <!-- menu mobile -->
-            <div class="menus__mobile mobile__hidden">
-                <div class="icon__logo">
-                    <img src="images-gbx/gbxicon.png" alt="icon"/>
-                    
-                </div>
-                <div class="seach__mobile">
-                    <input type="text" class="seach__input__mobile" id="input__mobile" placeholder="tim kiem...">
-                    <button class="seach__button__mobile" id="btn__mobile"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-                <div class="order__tracking__mobile">
-                    <button id="giohang__mobile" ><i class='bx bx-cart-alt'></i><div class="number__amount__mobile">0</div></button>
-                    <!-- <button><i class="fa-solid fa-pen-to-square"></i></button> -->
-                </div>
-                <div class="menu__mobile_btn">
-                    <button><i class="fa-solid fa-bars"></i></button>
-                </div>
-            </div>
-
-            <!-- menu -->
-            <nav class="menus hidden__menu">
-                <div class="menu__list">
-                    <div class="img__header__mobile mobile__hidden">
-                        <img src="images-gbx/gbxheader01.png" alt="img header"/>
-                        <button class="prev__menu__mobile" id="prev__menu"><i class="fa-solid fa-arrow-left-long"></i></button>
-                    </div>
-                    
+                <div class="content-nav">
                     <ul>
-                        <li><a href="#" target="_blank">Trang Chủ</a></li>
-                        <li><a href="#" target="_blank">Gấu Bông</a></li>
-                        <li><a href="#" target="_blank">Hoa Hồng Sáp</a></li>
-                        <li><a href="#" target="_blank">Socola</a></li>
-                        <li><a href="#" target="_blank">beautiful nails</a></li>
-                        <li><a id="menu__contact" href="#" >Liên Hệ</a></li>
+                        <li><a href="#">Trang Chủ</a></li>
+                        <li><a href="#">Sản Phẩm</a></li>
+                        <li><a href="#">Liên Hệ</a></li>
+                        <li><a href="#">Giới Thiệu</a></li>
                     </ul>
+                    <form>
+                        <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+                <!-- The Modal -->
+                <button id="cart">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    Giỏ Hàng
+                </button>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Giỏ Hàng</h5>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                            <div class="cart-row">
+                                <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                                <span class="cart-price cart-header cart-column">Giá</span>
+                                <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                            </div>
+                            <div class="cart-items">
+
+                            </div>
+                            <div class="cart-total">
+                                <strong class="cart-total-title">Tổng Cộng:</strong>
+                                <span class="cart-total-price">0VNĐ</span>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                            <button type="button" class="btn btn-primary order">Thanh Toán</button>
+                        </div>
+                    </div>
                 </div>
             </nav>
+
         </header>
-
-        <!-- model introduce yourself / gioi thieu ban than -->
-
-        <div class="model hidden">
-            <div class="model__inner">
-                <div class="model__card">
-                    <div class="model__card__img" >
-                        <img src="images-gbx/gaubongnen.png" alt="img user" />
-                        
+        <header>
+            <nav>
+                <!-- bắt đầu nav-mobile -->
+                <div class="nav-mobile">
+                    <div class="icon-mobile" id="btnmenu">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
                     </div>
-                    <div class="model__card__name">
-                        <h2>Booqee</h2>
-                    </div>
-                    <div class="model__card__job">
-                        <p>Developer javascript</p>
-                    </div>
-                    <div class="model__card__social">
-                        <a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
-                        <a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                        <a href="#" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-                    </div>
-                    <div class="model__card__close">
-                        <button>Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- model product detail   chi tiết sản phẩm-->
-
-        <div class="model__detail hidden">
-            <div class="model__detail__inner">
-                <div><i class="fa-solid fa-xmark"></i></div>
-                
-                <div class="model__body">
-                    <div class="model__imgs">
-                        <div class="model__img">
-                            <img id="model__img__1" src="images-gbx/gaubongnen.png" alt="anhgau" />
-                            <div class="control prev"><i class="fa-solid fa-angle-left"></i></div>
-                            <div class="control next"><i class="fa-solid fa-angle-right"></i></div>
-                        </div>
-                        <div class="model__thumb">
-                           
-                            <div><img class="click__img" id="model__img__2" src="images-gbx/gaubongnen.png" alt="anhgau" /></div>
-                            <div><img id="model__img__3" src="images-gbx/gaubong.png" alt="anhgau" /></div>
-                            <div><img id="model__img__4" src="images-gbx/gaubongnen.png" alt="anhgau" /></div>
-                            <div><img id="model__img__5" src="images-gbx/gaubong.png" alt="anhgau" /></div>
-                            <div><img id="model__img__6" src="images-gbx/gaubongnen.png" alt="anhgau" /></div>
-                        </div>
-                    </div>
-                    <div class="model__internation">
-                        <div class="model__product__names">
-                            <h3 id="model__product_name" >Product Name</h3>
-                            <div class="model__product__reviews">
-                                <div class="model__review__scores">
-                                    <h4 id="model__review__score" >4.5</h4>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star"></i></span>
-                                    <span><i class="fa-solid fa-star-half-stroke"></i></i></span>
-                                </div>
-                                <div class="model__review__numbers">
-                                    <h4 id="model__review__number"  >0</h4>
-                                    <p>Đánh giá</p>
-                                </div>
-                                <div class="model__number_solds">
-                                    <h4 id="model__number_sold" >5</h4>
-                                    <p>Đã bán</p>
-                                </div>
-                            </div>
-                            <div class="model__product__statuss">
-                                <p>Tình Trạng: </p>
-                                <h4 id="model__product__status" >Còn hàng</h4>
-                            </div>
-                        </div>
-                        <div class="model__product__price">
-                            <h3>$99</h3>
-                            <div class="model__suppot">
-                                <span><i class="fa-solid fa-truck-fast"></i></span>
-                                <p>Giao hàng nhanh toàn quốc</p>
-                            </div>
-                            <div class="model__suppot">
-                                
-                                <span><i class="fa-solid fa-user"></i></span>
-                                <p>Hỗ trợ tư vấn chọn màu</p>
-                            </div>
-                            <div class="model__suppot">
-                                <span><i class="fa-solid fa-box"></i></span>
-                                <p>Đóng gói theo yêu cầu</p>
-                            </div>
-                            <div class="model__suppot">
-                                <span><i class="fa-solid fa-pen"></i></span>
-                                <p>Hỗ trợ viết thiệp yêu thương</p>
-                            </div>
-                        </div>
-                        <div class="model__add__cart">
-                            <div class="model__product__color">
-                                <span>Màu sắc:</span>
-                                <span class="bgr__gold" id="model__product__color__details"></span>
-                            </div>
-                            <div class="model__product__type">
-                                <span>Kiểu dáng:</span>
-                                <span id="model__product__type__heart"><i class="em em-kissing_heart" aria-role="presentation" aria-label="FACE THROWING A KISS"></i></span>
-                                <span id="model__product__type__angry"><i class="em em-angry" aria-role="presentation" aria-label="ANGRY FACE"></i></span>
-                                <span id="model__product__type__grin"><i class="em em-grin" aria-role="presentation" aria-label="GRINNING FACE WITH SMILING EYES"></i></span>
-                                
-                            </div>
-                            <div class="model__product__number">
-                                <span>Số lượng:</span>
-                                <span id="model__product__number__addition" >+</span>
-                                <input type="number" id="model__product__number" value="1" />
-                                <span id="model__product__number__subtraction" >-</span>
-                            </div>
-                            <div class="model__product__button">
-                                <button id="model__add__card"><i class="fa-solid fa-cart-shopping"></i> Mua ngay</button>
-                                <button class="model__product__button__like" id="model__like">Yêu thích <i class="fa-solid fa-heart"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="model__comment">
-                    <div class="model__comment__header">
-                        <h4>Mô tả sản phẩm</h4>
-                    </div>
-                    <div class="model__comment__body"></div>
-                </div>
-            </div>
-        </div>
-
-        <!-- category product   danh mục sản phẩm-->
-
-        <div class="product__category__title">
-
-            <div>
-                <h3>Danh Mục Sản Phẩm</h3>
-            </div>
-            
-            <div class="product__category">
-                <div class="category__control category__prev"><i class="fa-solid fa-angle-left"></i></div>
-                <div class="category__control category__next"><i class="fa-solid fa-angle-right"></i></div>
-                <div class="category__item category__item1">
-                    <div class="category__item__img">
-                        <img class="category__item__img1" src="images-gbx/gaubong.png" alt="a" />
-                    </div>
-                    <div class="category__item__name">
-                        <h3  class="category__item__name1"  id="category__product__name" >Product Name</h3>
-                    </div>
-                </div>
-
-                <!-- slot 1 -->
-
-                <div class="category__item category__item2">
-                    <div class="category__item__img">
-                        <img class="category__item__img2"  src="images-gbx/gaubong.png" alt="a" />
-                    </div>
-                    <div class="category__item__name">
-                        <h3 class="category__item__name2" id="category__product__name" >Product Name</h3>
-                    </div>
-                </div>
-
-                <!-- slot 2 -->
+                    <div class="item_menu" id="menutop">
+                        <form>
+                            <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                        <ul>
+                            <li><a href="#">Trang Chủ</a></li>
+                            <li><a href="#">Sản Phẩm</a></li>
+                            <li><a href="#">Liên Hệ</a></li>
+                            <li><a href="#">Giới Thiệu</a></li>
+                        </ul>
     
-                <div class="category__item category__item3">
-                    <div class="category__item__img">
-                        <img class="category__item__img3"  src="images-gbx/gaubong.png" alt="a" />
                     </div>
-                    <div class="category__item__name">
-                        <h3 class="category__item__name3" id="category__product__name" >Product Name</h3>
-                    </div>
-                </div>
-
-                <!-- slot 3 -->
-        
-                <div class="category__item category__item4">
-                    <div class="category__item__img">
-                        <img class="category__item__img4"  src="images-gbx/gaubong.png" alt="a" />
-                    </div>
-                    <div class="category__item__name">
-                        <h3 class="category__item__name4" id="category__product__name" >Product Name</h3>
-                    </div>
-                </div>
-
-                <!-- slot 4 -->
-        
-                <div class="category__item category__item5">
-                    <div class="category__item__img">
-                        <img  class="category__item__img5" src="images-gbx/gaubong.png" alt="a" />
-                    </div>
-                    <div class="category__item__name">
-                        <h3 class="category__item__name5" id="category__product__name" >Product Name</h3>
-                    </div>
-                </div>
-
-                <!-- slot 5 -->
-        
-                <div class="category__item category__item6">
-                    <div class="category__item__img">
-                        <img  class="category__item__img6" src="images-gbx/gaubong.png" alt="a" />
-                    </div>
-                    <div class="category__item__name">
-                        <h3 class="category__item__name6" id="category__product__name" >Product Name</h3>
-                    </div>
-                </div>
-
-                <!-- slot 6 -->
-                
-        
-            
-            </div>
-        </div>
-
-        <!-- hot product - sản phẩm bán nhiều nhất -->
-
-        <div class="heading__custom">
-            <div class="heading__custom__title">
-                <h3><i class="fa-solid fa-fire"></i> HOT HOT</h3>
-            </div>
-            <div class="heading__custom__body">
-                <div class="heading__custom__item featured__product">
-                    <div class="feature__product__title">
-                        <h3>Sản phẩm nổi bật</h3>
-                    </div>
-                    <div class="feature__product__body">
-                        <div class="heading__product__type">
-                            <ul>
-                                <li id="heading__teddy__bear" class="boder__bottom__gold" >Gấu Bông</li>
-                                <li id="heading__rose" >Hoa Hồng</li>
-                                <li id="heading__chocolate" >Socola</li>
-                                <li id="heading__nail" >Nail Đẹp</li>
-                                
-                            </ul>
+                </div> 
+                <!-- kết thúc nav-mobile -->
+                .......
+                .......
+                .......
+                .......
+                </nav>
+                </header>
+        <!-- content -->
+        <section class="wrapper">
+            <div class="products">
+                <ul>
+                    <li class="main-product">
+                        <div class="img-product">
+                            <img class="img-prd"
+                                src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/sualai.jpg?v=1573720306000"
+                                alt="">
                         </div>
-
-                        <!-- ---------------- -->
-                        <div class="heading__product__type__body">
-                            <div class="heading__control heading__prev"><i class="fa-solid fa-angle-left"></i></div>
-                            <div class="heading__control heading__next"><i class="fa-solid fa-angle-right"></i></div>
-
-                            <!-- gau -->
-
-                            <div class="animation teddy">
-
-                                <div class="heading__item heading1">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">0</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Product Name</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
+                        <div class="content-product">
+                            <h3 class="content-product-h3">Mũi Hàn 500</h3>
+                            <div class="content-product-deltals">
+                                <div class="price">
+                                    <span class="money">25000đ</span>
                                 </div>
-
-                                <!-- item1 -->
-
-                                <div class="heading__item heading2">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item2 -->
-
-                                <div class="heading__item heading3">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item3 -->
-                            </div>
-
-                            <!-- hoa -->
-
-                            <div class="animation rose hidden">
-                                
-                                <div class="heading__item heading1">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item1 -->
-
-                                <div class="heading__item heading2">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item2 -->
-
-                                <div class="heading__item heading3">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item3 -->
-                            </div>
-
-                            <!-- socola -->
-
-                            <div class="animation socola hidden">
-                                
-                                <div class="heading__item heading1">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item1 -->
-
-                                <div class="heading__item heading2">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item2 -->
-
-                                <div class="heading__item heading3">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item3 -->
-                            </div>
-                            
-                            <!-- nail -->
-
-                            <div class="animation nail hidden">
-                                
-                                <div class="heading__item heading1">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item1 -->
-
-                                <div class="heading__item heading2">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item2 -->
-
-                                <div class="heading__item heading3">
-                                    <div class="heading__product__img">
-                                        <img src="images-gbx/gaubong.png" alt="">
-                                    </div>
-                                    <div class="heading__product__number">
-                                        <h3 id="heading__number">1</h3>
-                                    </div>
-                                    <div class="heading__product__internation">
-                                        <div class="heading__product__name">Booqee</div>
-                                        <div class="heading__product__price">$99</div>
-                                        <div class="heading__product__star"><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star color__gold"></i><i class="fa-solid fa-star-half-stroke color__gold"></i>
-                                            <div>(</div>
-                                            <div class="heading__product__sold"></div>
-                                            <div>)</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- item3 -->
+                                <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- ---------------- -->
-
-                <div class="heading__custom__item hot__product">
-                    <div class="feature__product__title">
-                        <h3>Hot Deals</h3>
-                    </div>
-                    <div class="feature__product__body">
-                        <div class="image__sale">
-                            <img id= "img__sale" src="images-gbx/gaubongnen.png" alt="sale" />
+                    </li>
+                    <li class="main-product">
+                        <div class="img-product">
+                            <img class="img-prd"
+                                src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/sp1-57698689-e2c0-429a-bf4f-3bd0f39230d8.jpg?v=1575337954000"
+                                alt="">
                         </div>
-                        <div class="internation__sale">
-                            <h3>-- SIÊU SALE --</h3>
-                            <h3><i class="fa-solid fa-heart"></i> Valentine <i class="fa-solid fa-heart"></i></h3>
-                            <P>Khởi nguồn cảm xúc - Chắp cánh yêu thương</P>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ---------------- -->
-                
-                <div class="heading__custom__item newproduct">
-                    <div class="feature__product__title">
-                        <h3>Sản phẩm mới</h3>
-                    </div>
-                    <div class="feature__product__body new__products">
-                        <div class="new__product__01">
-                            <img src="images-gbx/gaubongnen.png" alt="img__new" />
-                            <div class="new__icon">NEW</div>
-                        </div>
-                        <div class="new__product__img">
-                            <div>
-                                <img src="images-gbx/gaubongnen.png" alt="">
-                                <div class="new__icon">NEW</div>
-                            </div>
-                            <div>
-                                <img src="images-gbx/gaubongnen.png" alt="">
-                                <div class="new__icon">NEW</div>
-                            </div>
-                            <div>
-                                <img src="images-gbx/gaubongnen.png" alt="">
-                                <div class="new__icon">NEW</div>
+                        <div class="content-product">
+                            <h3 class="content-product-h3">Trạm Hàn Hakko 942 75W 200-480*C 220VAC Cực Nóng</h3>
+                            <div class="content-product-deltals">
+                                <div class="price">
+                                    <span class="money">1299000đ</span>
+                                </div>
+                                <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        
-
-
-        <!-- card product  -->
-
-        <section class="cards">
-            <div class="cards__title">
-                <h2 id="product__title">Đề xuất riêng cho bạn</h2>
-                <h2><a href="index2.html"><i class="fa-solid fa-arrows-rotate"></i> Xem thêm</a></h2>
-            </div>
-            <div class="cards__item">
-                <div class="card"> 
-                    <div class="card__heart">
-                        <i class='bx bx-heart'></i>
-                    </div>
-                    <div class="card__cart">
-                        <i class='bx bx-cart-alt'></i>
-                    </div>
-                    <div class="card__img">
-                        <img src="images-gbx/gaubong.png" alt="anhgau"/>
-                    </div>
-                    <div class="card__title">
-                        <h2>QooBee</h2>
-                    </div>
-                    <div class="card__price">
-                        <h3>$99</h3>
-                    </div>
-                    <div class="card__size">
-                        <span>Size:</span>
-                        <span id="card__size__details">180</span>
-                        <span>cm</span>
-                        
-                    </div>
-                    <div class="card__color">
-                        <span>Color:</span>
-                        <span id="card__color__details"></span>
-                    </div>
-
-                    <div class="card__action">
-                        <div class="card__ids">
-                            <span>Mã SP:</span>
-                            <p id="card__id">gb007</p>
+                    </li>
+                    <li class="main-product">
+                        <div class="img-product">
+                            <img class="img-prd"
+                                src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/sp1-a45a32a1-38d4-4a8a-9c37-e936013858b2.jpg?v=1575877003000"
+                                alt="">
                         </div>
-                        <button id="cart__action__detail" >Chi Tiết</button>
-                        <button id="cart__action__add__card">Mua Ngay</button>
-                    </div>
-                </div>
-
-
-                <!-- <div class="card"> 
-                    <div class="card__heart">
-                        <i class='bx bx-heart'></i>
-                    </div>
-                    <div class="card__cart">
-                        <i class='bx bx-cart-alt'></i>
-                    </div>
-                    <div class="card__img">
-                        <img src="images-gbx/gaubong.png" alt="anhgau"/>
-                    </div>
-                    <div class="card__title">
-                        <h2>Gấu Bông</h2>
-                        <h3>QooBee</h3>
-                    </div>
-                    <div class="card__price">
-                        <h3>$99</h3>
-                    </div>
-                    <div class="card__size">
-                        <span>Size:</span>
-                        <span id="card__size__details">180</span>
-                        <span>cm</span>
-                        
-                    </div>
-                    <div class="card__color">
-                        <span>Color:</span>
-                        <span id="card__color__details"></span>
-                    </div>
-                    <div class="card__action">
-                        <button>Chi Tiết</button>
-                        <button>Mua Ngay</button>
-                    </div>
-                </div>
-
-
-                <div class="card"> 
-                    <div class="card__heart">
-                        <i class='bx bx-heart'></i>
-                    </div>
-                    <div class="card__cart">
-                        <i class='bx bx-cart-alt'></i>
-                    </div>
-                    <div class="card__img">
-                        <img src="images-gbx/gaubong.png" alt="anhgau"/>
-                    </div>
-                    <div class="card__title">
-                        <h2>Gấu Bông</h2>
-                        <h3>QooBee</h3>
-                    </div>
-                    <div class="card__price">
-                        <h3>$99</h3>
-                    </div>
-                    <div class="card__size">
-                        <span>Size:</span>
-                        <span id="card__size__details">180</span>
-                        <span>cm</span>
-                        
-                    </div>
-                    <div class="card__color">
-                        <span>Color:</span>
-                        <span id="card__color__details"></span>
-                    </div>
-                    <div class="card__action">
-                        <button>Chi Tiết</button>
-                        <button>Mua Ngay</button>
-                    </div>
-                </div>
-
-
-                <div class="card"> 
-                    <div class="card__heart">
-                        <i class='bx bx-heart'></i>
-                    </div>
-                    <div class="card__cart">
-                        <i class='bx bx-cart-alt'></i>
-                    </div>
-                    <div class="card__img">
-                        <img src="images-gbx/gaubong.png" alt="anhgau"/>
-                    </div>
-                    <div class="card__title">
-                        <h2>Gấu Bông</h2>
-                        <h3>QooBee</h3>
-                    </div>
-                    <div class="card__price">
-                        <h3>$99</h3>
-                    </div>
-                    <div class="card__size">
-                        <span>Size:</span>
-                        <span id="card__size__details">180</span>
-                        <span>cm</span>
-                        
-                    </div>
-                    <div class="card__color">
-                        <span>Color:</span>
-                        <span id="card__color__details"></span>
-                    </div>
-                    <div class="card__action">
-                        <button>Chi Tiết</button>
-                        <button>Mua Ngay</button>
-                    </div>
-                </div>
-
-
-                <div class="card"> 
-                    <div class="card__heart">
-                        <i class='bx bx-heart'></i>
-                    </div>
-                    <div class="card__cart">
-                        <i class='bx bx-cart-alt'></i>
-                    </div>
-                    <div class="card__img">
-                        <img src="images-gbx/gaubong.png" alt="anhgau"/>
-                    </div>
-                    <div class="card__title">
-                        <h2>Gấu Bông</h2>
-                        <h3>QooBee</h3>
-                    </div>
-                    <div class="card__price">
-                        <h3>$99</h3>
-                    </div>
-                    <div class="card__size">
-                        <span>Size:</span>
-                        <span id="card__size__details">180</span>
-                        <span>cm</span>
-                        
-                    </div>
-                    <div class="card__color">
-                        <span>Color:</span>
-                        <span id="card__color__details"></span>
-                    </div>
-                    <div class="card__action">
-                        <button>Chi Tiết</button>
-                        <button>Mua Ngay</button>
-                    </div>
-                </div>
-
-
-                <div class="card"> 
-                    <div class="card__heart">
-                        <i class='bx bx-heart'></i>
-                    </div>
-                    <div class="card__cart">
-                        <i class='bx bx-cart-alt'></i>
-                    </div>
-                    <div class="card__img">
-                        <img src="images-gbx/gaubong.png" alt="anhgau"/>
-                    </div>
-                    <div class="card__title">
-                        <h2>Gấu Bông</h2>
-                        <h3>QooBee</h3>
-                    </div>
-                    <div class="card__price">
-                        <h3>$99</h3>
-                    </div>
-                    <div class="card__size">
-                        <span>Size:</span>
-                        <span id="card__size__details">180</span>
-                        <span>cm</span>
-                        
-                    </div>
-                    <div class="card__color">
-                        <span>Color:</span>
-                        <span id="card__color__details"></span>
-                    </div>
-                    <div class="card__action">
-                        <button>Chi Tiết</button>
-                        <button>Mua Ngay</button>
-                    </div>
-                </div>
-
-
-                <div class="card"> 
-                    <div class="card__heart">
-                        <i class='bx bx-heart'></i>
-                    </div>
-                    <div class="card__cart">
-                        <i class='bx bx-cart-alt'></i>
-                    </div>
-                    <div class="card__img">
-                        <img src="images-gbx/gaubong.png" alt="anhgau"/>
-                    </div>
-                    <div class="card__title">
-                        <h2>Gấu Bông</h2>
-                        <h3>QooBee</h3>
-                    </div>
-                    <div class="card__price">
-                        <h3>$99</h3>
-                    </div>
-                    <div class="card__size">
-                        <span>Size:</span>
-                        <span id="card__size__details">180</span>
-                        <span>cm</span>
-                        
-                    </div>
-                    <div class="card__color">
-                        <span>Color:</span>
-                        <span id="card__color__details"></span>
-                    </div>
-                    <div class="card__action">
-                        <button>Chi Tiết</button>
-                        <button>Mua Ngay</button>
-                    </div>
-                </div> -->
-                
+                        <div class="content-product">
+                            <h3 class="content-product-h3">Máy Bơm Chìm Hộ Gia Đình QDX 1500W 220VAC 40L/1min H=8m</h3>
+                            <div class="content-product-deltals">
+                                <div class="price">
+                                    <span class="money">1599000đ</span>
+                                </div>
+                                <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="main-product no-margin">
+                        <div class="img-product">
+                            <img class="img-prd"
+                                src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/module-diy-sac-khong-day-5.jpg?v=1570011041000"
+                                alt="">
+                        </div>
+                        <div class="content-product">
+                            <h3 class="content-product-h3">Module DIY Sạc Không Dây Qi IOS/Androi - Bộ phát V2</h3>
+                            <div class="content-product-deltals">
+                                <div class="price">
+                                    <span class="money">89000đ</span>
+                                </div>
+                                <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="main-product">
+                        <div class="img-product">
+                            <img class="img-prd"
+                                src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/bo-dieu-chinh-dien-ap-sdty-200p.jpg?v=1560155769920"
+                                alt="">
+                        </div>
+                        <div class="content-product">
+                            <h3 class="content-product-h3">Bộ Điều Chỉnh Điện Áp CHLVFU SDTY-200P 20KW 200A (BH 06 Tháng)
+                            </h3>
+                            <div class="content-product-deltals">
+                                <div class="price">
+                                    <span class="money">2199000đ</span>
+                                </div>
+                                <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="main-product">
+                        <div class="img-product">
+                            <img class="img-prd"
+                                src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/isd1760-thu-am-thanh-phat-am-thanh-2.jpg?v=1568951032960"
+                                alt="">
+                        </div>
+                        <div class="content-product">
+                            <h3 class="content-product-h3">Module ISD1760 Thu Âm Thanh - Phát Âm Thanh 75s</h3>
+                            <div class="content-product-deltals">
+                                <div class="price">
+                                    <span class="money">115000đ</span>
+                                </div>
+                                <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="main-product">
+                        <div class="img-product">
+                            <img class="img-prd"
+                                src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/new-arrival-b-plus-64-bit-quad-2.jpg?v=1568277329707"
+                                alt="">
+                        </div>
+                        <div class="content-product">
+                            <h3 class="content-product-h3">Raspberry Pi 3 E14 Model B Plus B+ 2.4G/5G Bluetooth</h3>
+                            <div class="content-product-deltals">
+                                <div class="price">
+                                    <span class="money">1295000đ</span>
+                                </div>
+                                <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="main-product no-margin">
+                        <div class="img-product">
+                            <img class="img-prd"
+                                src="https://bizweb.dktcdn.net/thumb/large/100/228/168/products/module-iot-esp8266-esp-12e-ch340-3.jpg?v=1565950165000"
+                                alt="">
+                        </div>
+                        <div class="content-product">
+                            <h3 class="content-product-h3">Module IOT ESP8266 ESP-12E CH340 V3</h3>
+                            <div class="content-product-deltals">
+                                <div class="price">
+                                    <span class="money">85000đ</span>
+                                </div>
+                                <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
+        <!-- footer -->
+        <footer>
+            <div class="footer-item">
+                <div class="img-footer">
+                    <img src="img/logo.png" alt="" />
+                </div>
+                <div class="social-footer">
+                    <li><a target="_blank" href="https://www.facebook.com/thanhlongdev">
+                            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                        </a></li>
+                    <li><a target="_blank" href="https://github.com/long1211">
+                            <i class="fa fa-github-square" aria-hidden="true"></i>
+                        </a></li>
 
-
-
-        <footer></footer>
-       
-        
-    
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
